@@ -1,0 +1,28 @@
+name: product_group_7
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        python-version: [3.8]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up python 3
+      uses: actions/setup-python@v2
+    - name: Install libs
+      run: |
+        pip install pytest
+        pip install numpy
+        pip install pandas
+        pip install tensorflow
+        pip install keras
+                
+    - name: Test with pytest
+      run: |
+        pytest test.py
