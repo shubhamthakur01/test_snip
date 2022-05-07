@@ -1,0 +1,148 @@
+{% extends 'navigation_bar.html' %}
+
+{% block content %}
+<html>
+<head>
+  <title>Demo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+ #videoElement {
+ position:absolute;
+   height: 500px;
+ }
+.canvas{
+position:relative;
+
+}
+
+</style>
+
+<body>
+
+<div class="container" style = "margin-left: 5%;">
+  <br>
+  <br>
+  <h2>Have fun with the demo</h2>
+  <h5>Click on the snip button. Crop your favorite outfit. Get instant recommendations</h5>
+</div>
+
+<div class="row justify-content-center" style = "margin-left: 5%;">
+  <div class="col-md-9 center-block">
+    <!-- <iframe width="800" height="320" src="static/Matt_Cutts.mp4" controls id="videoElement" title="YouTube video player" 
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen></iframe> -->
+    <video width="800" height="320" controls id="videoElement"
+           src="static/Matt_Cutts.mp4" alt="
+        Your browser does not support the video tag.">
+      </video>
+    <canvas class="canvas" id="cv1"></canvas>
+
+
+  </div>
+  <aside class="col-md-3">
+    <h4 >Other videos</h4>
+    <img src="static/steve_harvey.png" id="source_one" style= "height : 130px;width : 200px;padding : 0;" on_c>
+  <p  style = 'margin-right: 100px'> Steve harvey Show</p>
+
+
+  <img src="static/video2.png" id="source_two"  style= " height : 130px;width : 200px;padding : 0;">
+  <p  style = 'margin-right: 100px'>A random interview</p>
+
+  <img src="static/video3.png" id="source_three"  style= " height : 130px;width : 200px;padding : 0;">
+  <p style = 'margin-right: 100px'> Lesson on etiquettes</p>
+  </div>
+</aside>
+<div style = "margin-left: 5%;">
+<button type="button" id='qwerty' class="btn-sm btn-primary" data-toggle="modal" data-target="#recommendation" style="display:none;">Snip
+  </button>
+<button type="button" class="btn btn-primary" id="qw" onclick="getsnap()" style="margin:20px">Snip</button>
+</div>
+
+  <!-- The Modal -->
+  <div class="modal fade" id="recommendation">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Styles curated for you!</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div class="row" style="margin-left: 5%;">
+            <div class="column">
+              <img src="static/reco1.jpeg" alt="1st Recommendations" style= "height : 150px;width : 130px;">
+              <p>Price: $30.83</p>
+              <a href = 'https://www.nzwe.com/normal-mens-plain-pullover-sweater-ribbed-trim-v-neck-long-sle[…]im-fit-pullover-sweater-s-481098.html?language=en&currency=USD' target="_blank">Link to buy</a>
+            </div>
+
+            <div class="column">
+              <img src="static/reco2.jpeg" alt="2nd Recommendations" style= "height : 150px;width : 130px;padding : 0;">
+              <p>Price: $22.99</p>
+              <a href = 'https://www.zara.com/us/en/mock-neck-sweater-p00632343.html?v1=144396067' target="_blank">Link to buy</a>
+            </div>
+
+            <div class="column">
+              <img src="{{ url_for('static', filename='reco3.jpg') }}" alt="3rd Recommendations" style= "height : 150px;width : 130px;padding : 0;">
+              <p>Price: $8.16</p>
+              <a href = 'https://www.kohls.com/product/prd-5014498/mens-croft-barrow-regular-fit-fleece-crewneck-sweater.jsp?skuid=69620184&CID=seo_offers&utm_campaign=SAG&utm_medium=organic&utm_source=google&utm_product=69620184' target="_blank">Link to buy</a>
+            </div>
+            
+            <div class="column">
+              <img src="{{ url_for('static', filename='reco4.jpg') }}" alt="4th Recommendations" style= "height : 150px;width : 130px;padding : 0;">
+              <p>Price: $405</p>
+              <a href = 'https://www.mrporter.com/en-ca/mens/product/de-bonne-facture/clothing/crew-necks/alpaca-and-wool-blend-sweater/25185454456642466?&ignoreRedirect=true&ppv=2' target="_blank">Link to buy</a>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+<div class="container">
+
+ </div>
+<div id="newdiv" style="position:absolute;">
+<canvas class="canvas" id="cv2"></canvas>
+</div>
+
+<br>
+<br>
+<br>
+</body>
+
+{% block javascript %}
+    <script type="text/javascript">
+        {% include "demoscript.js" %}
+    </script>
+
+{% endblock %}
+
+</html>
+{% endblock %}
+
+
+
+

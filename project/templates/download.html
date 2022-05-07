@@ -1,0 +1,28 @@
+{% extends 'navigation_bar.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Snip-n-Shop</title>
+    <!-- {% block styles %} -->
+
+    {{ bootstrap.load_css() }}
+    <!-- {% endblock %} -->
+
+</head>
+
+<body>
+    
+    <div class="jumbotron" style="background-image: url('static/background.png'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+        <h1 class="display-4"> Extension can be downloaded once it is made open-source</h1>
+    </div>
+
+    <!-- {% block scripts %} -->
+    <!-- Optional JavaScript -->
+    {{ bootstrap.load_js() }}
+<!-- {% endblock %} -->
+</body>
+</html>
+{% endblock %}

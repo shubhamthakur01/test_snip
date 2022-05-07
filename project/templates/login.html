@@ -1,0 +1,45 @@
+{% extends 'navigation_bar.html' %}
+{% block content %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+
+    <title>Login Form</title>
+  </head>
+  <body>
+  {% include 'header.html' %}
+    <div class='text-center mt-5'>
+
+
+<!--</form>-->
+
+    <form style='max-width:480px;margin:auto' action="", method="post">
+        {{ form.csrf_token }}
+      <a href = '/'>
+        <img class='mt-4 mb-4 my-6' src='static/snipshop.png'
+        width="100" height=72 alt='logo'>
+      </a>
+      <p style="margin-left:-45px">{{form.email.label}}
+      {{form.email(size=32)}}<br>
+    </p>
+    <p style="margin-left:-60px">{{form.password.label}}
+    {{form.password(size=32)}}<br>
+    </p>
+    <p>{{ form.submit() }}</p>
+
+      <p class='mt-4 mb-4'>Not registered yet? <a href='register'>Register here</a></p>
+      <a href='reset_password'>Forgot Password</a>
+    </form>
+
+  </div>
+  <br>
+  <br>
+  <br>
+  </body>
+{% endblock %}
+

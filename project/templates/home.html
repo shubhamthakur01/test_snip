@@ -1,0 +1,59 @@
+{% extends 'navigation_bar.html' %}
+
+
+{% block content %}
+<html>
+<head>
+    <title>Snip-n-Shop</title>
+    {% block styles %}
+
+    {{ bootstrap.load_css() }}
+    {% endblock %}
+
+    
+
+</head>
+
+<body>
+    <!-- <h2 style="font-family:'Times New Roman';position: absolute; right:70px; top:5px;"><a href='about.html'> About Us </a></h2>
+    <h1> <img src="../images/snip-n-shop_logo-removebg-preview.png" style="width:30%"> </h1> -->
+    <div style="background-image: url('static/background1.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center;">
+        <br>
+        <br>
+        <h1 class="display-3" style="color: rgba(9, 58, 114, 0.918); text-align: center; font-weight: bold; font-family: 'Lato', sans-serif;">Snip-n-Shop</h1>
+        <br>
+        <br>
+        <h1 class="display-5" style="color: rgba(13, 50, 92, 0.877); margin-left: 4%;">Shop Like Never Before</h1>
+        <p class="lead" style="color: rgba(13, 50, 92, 0.877); margin-left: 4%;">Find your favorite outfits just one click away. 
+            <br>Don't miss out on that cool outfit because you can't find it on google! </p>
+        <!-- <p>A smart AI-based system that helps you find visually similar products along with their price and the websites to buy them from. 
+        <br>We make shopping the easiest decision ever, just Snip, Like, Buy & Enjoy.</p> -->
+        <a class="btn btn-primary btn-lg" style="margin-left: 4%;" href="/about" role="button">Learn more</a>
+        <br>
+        <br>
+        <!-- <hr class="my-4"> -->
+        <br>
+        
+        <h1 class="display-5" style="color: rgba(13, 50, 92, 0.877); margin-left: 4%; ">Try out our tool!</h1>
+        <p class="lead" style="color: rgba(13, 50, 92, 0.877); margin-left: 4%;">Start your shopping journey 
+            <br>with some cool outfits from our demo videos. </p>
+
+        <!-- <p style="color: rgba(19, 68, 124, 0.692)">Install the Snip-n-Shop plugin to your browser. While you stream, snip on an item that you like. Browse your personalized recommendations. 
+         <br>   Click on a recommended product and get redirected to the website to buy it.</p> -->
+        <a class="btn btn-primary btn-lg" style="margin-left: 4%;" href="/demo" role="button">Demo</a>
+        <br>
+        <br>
+        <br>
+        <br>
+        <a class=“lead” href = "https://images.pexels.com/photos/5706273/pexels-photo-5706273.jpeg" style="color:rgb(0, 0, 0); font-size: 6px; margin-left: 95%;">Image Credits</a>
+        <!-- <a href = 'https://images.pexels.com/photos/5706273/pexels-photo-5706273.jpeg' style="color: black; font-size: 0.01; margin-left: 80%;">Image Credits: https://imgix.com/</a> -->
+      </div>
+      {% block scripts %}
+<!-- Optional JavaScript -->
+{{ bootstrap.load_js()}}
+{% endblock %}
+
+</body>
+
+</html>
+{% endblock %}

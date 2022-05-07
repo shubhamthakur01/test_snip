@@ -1,0 +1,57 @@
+{% extends 'navigation_bar.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+</head>
+<form style='max-width:480px;margin:auto' #ccc>
+    <!-- Image -->
+<!--    <img src="static/487578_v9_bb.jpg" class="float-right" width="200" height="200" style= "float : right; margin-right: 30px; height : 160px;width : 140px;padding : 0;">-->
+    
+    <div class="container">
+        <h3 align='left'>Welcome {{firstname}}!</h3>
+        <!-- First name last name -->
+        Email : {{email}}
+        
+        <div class="row mt-2"></div>
+        <div class="row-mt-2"><input type="text" class="form-control" value='{{firstname}}' placeholder="First Name: {{firstname}}"></div>
+        <div class="row mt-2"></div>
+        <div class="row-mt-2"><input type="text" class="form-control" value='{{lastname}}' placeholder="Last Name: {{lastname}}"></div>
+        <!-- Gender -->
+        <div class="row mt-2" ></div>
+        <select class="form-control" id="Gender" name="Gender" value={{gender}}>
+            <option value="Male">Female</option>
+            <option value="Female">Male</option>
+            <option value="Other">Other</option>
+        </select>
+        <!-- DOB -->
+<!--        <div class="row mt-2"></div>-->
+<!--        <div class="col-md-6"><input type="text" class="form-control" value="" placeholder="Date of Birth(MM/DD/YYYY)" style="margin-left:-20px"></div>-->
+        <!-- Location -->
+        <div class="row mt-2"></div>
+        <div class="Location">
+          
+            <label for="Location" class='sr-only'>Choose your location</label>
+            <select id="Location" name="Location">
+                <option value="USA">USA</option>
+                <option value="INDIA">INDIA</option>
+            </select>
+        </div>
+        <!-- Password -->
+        <div class="row mt-2"></div>
+        <input type='password' id='password' class='form-control' placeholder='Enter Current Password' required autofocus>
+        <div class="row mt-2"></div>
+        <input type='password' id='password' class='form-control' placeholder='Enter new Password' required autofocus>
+        <div class="row mt-2"></div>
+        <input type='password' id='password' class='form-control' placeholder='Confirm new Password' required autofocus>
+    </div>
+    <!-- Save button -->
+        <button class='btn btn-lg btn-primary btn-block mt-4 mb-4' align='center'>Save</button>
+    
+    </div>
+  </form>
+</body>
+</html>
+{% endblock %}

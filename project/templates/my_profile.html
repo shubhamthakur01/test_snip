@@ -1,0 +1,51 @@
+{% extends 'navigation_bar.html' %}
+{% block content %}
+<html>
+<head>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+</head>
+
+<body>
+        <h1 style = "margin-left: 30px;">
+        Welcome {{firstname}}!
+
+        </h1>
+    
+    <br>
+    
+<!--   <div style= "position:absolute; right:100px; top:70px; float : right; margin-right: 30px; height : 250px;width : 140px;padding : 0;">-->
+<!--&lt;!&ndash;    <img src="static/487578_v9_bb.jpg" class="float-right" width="200" height="200" style= "float : right; margin-right: 30px; height : 160px;width : 140px;padding : 0;">&ndash;&gt;-->
+<!--    <p class='mt-5 mb-4'> <a href='/edit_profile'>Edit your profile</a></p>-->
+<!--</div>-->
+
+    <div class="row mt-2" style = "margin-left: 30px;">
+        <div class="col-md-2">
+            <p>Email ID</p>
+            <p>First Name</p>
+            <p>Last Name</p>
+            <p>Gender</p>
+<!--            <p>Date Of Birth</p>-->
+            <p>Location</p>
+            <p> <a href='/edit_profile'>Edit your profile</a></p>
+        </div>
+        <div class="col-md-2">
+            <p>{{email}}</p>
+            <p>{{firstname}}</p>
+            <p>{{lastname}}</p>
+            <p>{{gender}}</p>
+<!--            <p>01/01/1990</p>-->
+            <p>{{location}}</p>
+        </div>    
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    
+</body>
+</html>
+{% endblock %}

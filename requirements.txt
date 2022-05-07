@@ -1,0 +1,17 @@
+Bootstrap-Flask==2.0.2
+email-validator==1.1.3
+Flask==2.0.2
+Flask-Login==0.6.0
+Flask-SQLAlchemy==2.5.1
+Flask-WTF==1.0.1
+pandas==1.4.2
+SQLAlchemy==1.4.35
+WTForms==3.0.1
+psycopg2-binary==2.8.5
+
+boto3
+numpy
+torchvision
+tqdm
+keras
+urllib3

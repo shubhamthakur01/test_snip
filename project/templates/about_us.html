@@ -1,0 +1,66 @@
+{% extends 'navigation_bar.html' %}
+{% block content %}
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+#aboutusrow {
+ display: flex;
+ flex-wrap: wrap;
+ text-align: center;
+ margin-left: 170px;
+ margin-right: 0px;
+}
+/* Create four equal columns that sits next to each other */
+.col-sm {
+ max-width: 20%;
+ padding: 0 5px;
+ text-align: center;
+}
+.col-sm img {
+ margin-top: 10px;
+ border-radius: 50%;
+}
+
+.desc {
+text-align: center;
+margin-top: 50px;
+}
+
+</style>
+</head>
+<body>
+<div class="desc">
+        <h1> About Us </h1>
+        <p style="font-family:'Helvetica'; font-size:18px; margin-right: 180px; margin-left: 180px" align="justify">Helping to make visual shopping seamless. We are a diverse team of engineers, physicists, bankers, and data scientists. We are a mix of dreamers, shoppers, and geeks with one thing in common, we all love watching shows and movies. We saw how time-consuming it is to try and find a dress we liked in a movie and buy a similar product. We came together to make the shopping experience seamless and smooth from video to online shopping. We built Snip-n-Shop, where you can get top shopping recommendations based on your favorite shows and celebrities, you just need to pause the video to snip what you like and we take you to the shopping options. It's quick, it's seamless and it works!</p>
+        <br>
+        <br>
+        <h1> Our Team </h1>
+</div>
+
+{% for name in names %}
+    {% if (loop.index - 1) is divisibleby 4 %}
+<div class="row" id="aboutusrow">
+    {% endif %}
+    <div class="col-sm">
+    <div class="card">
+      <img src={{images[loop.index0]}} alt="Member" style="width:50%;margin-left:50px;margin-bottom:10px;">
+        <br>
+      <div class="container">
+        <h2 style="font-size:18px;line-height:14px">{{name}}</h2>
+        <p class="title" style="font-size:16px;line-height:14px" >{{designts[loop.index0]}}</p>
+        <p><a href={{urls[loop.index0]}}>  <i class="fa fa-linkedin-square" style="font-size:24px;color:blue"> </i></a></p>
+      </div>
+    </div>
+    </div>
+        {% if loop.index is divisibleby 4 %}
+    </div>
+    {% endif %}
+{% endfor %}
+</body>
+</html>
+{% endblock %}

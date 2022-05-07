@@ -1,0 +1,72 @@
+{% extends 'navigation_bar.html' %}
+{% block content %}
+
+<style>
+body {
+    background-color: #F3E5F5
+}
+
+.container {
+    margin-top: 100px
+}
+</style>
+
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+</head> 
+
+
+<div class="text-center">
+    <div class="container">
+        <div class="row pt-4">
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">Users</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1><b>Free </b></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Unlimited Search</li>
+                            <li>Email support</li>
+                            <li>Help center access</li>
+                        </ul> 
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">Partners Plan A</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1><b>5% </b><small class="text-muted">per Transaction</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Upto 10000 products</li>
+                            <li>Priority email support</li>
+                            <br>
+                        </ul> 
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">Partners Plan B</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1><b>5% </b><small class="text-muted">per Transaction</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>$0.30 per promoted product</li>
+                            <li>Unlimited products</li>
+                            <li>Priority email support</li>
+                        </ul> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

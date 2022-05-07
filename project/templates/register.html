@@ -1,0 +1,43 @@
+{% extends 'navigation_bar.html' %}
+
+{% block content %}
+
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+</head>
+ {% include 'header.html' %}
+<form style='max-width:480px;margin:auto' action="", method="post">
+     {{ form.csrf_token }}
+
+    <div class="container">
+      <h3 align='center'>Create your Snip-n-Shop Account</h3>
+      <br>
+      <p align='center'>Enjoy the seamless experience of shopping on one click.</p>
+         <div class="row mt-2" style = "margin-left: 30px;">
+        <div class="col-md-5">
+            <p>{{form.firstname.label}}</p>
+            <p>{{form.lastname.label}}</p>
+            <p>{{form.email.label}}</p>
+            <p>{{form.password.label}}</p>
+            <p>{{form.confirm.label}}</p>
+            <p>{{form.gender.label}}</p>
+            <p>{{form.location.label}}</p>
+        </div>
+        <div class="col-md-2">
+            <p>{{form.firstname(size=32)}}</p>
+            <p>{{form.lastname(size=32)}}</p>
+            <p>{{form.email(size=32)}}</p>
+            <p>{{form.password(size=32)}}</p>
+            <p>{{form.confirm(size=32)}}</p>
+            <p>{{form.gender}}</p><br>
+            <p>{{form.location}}</p>
+        </div>
+    </div>
+    <p align="center">{{ form.submit() }}</p>
+
+    </div>
+  </form>
+</body>
+</html>
+{% endblock %}

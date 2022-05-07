@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        .button {
+          background-color: #04AA6D;
+          font-family:'Arial';
+          position: absolute;
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          cursor: pointer;
+          border-radius: 5px;
+        }
+        .button1 {background-color: #027bff;}
+        button:hover {
+        opacity: 0.8;
+        border-radius: 5px;
+        }
+
+        footer {
+        background: #DEEBEB;
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 100%;
+        padding-left: 40px;
+        padding-right: 40px;
+        }
+        </style>
+
+
+<!--     Font Awesome-->
+        <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        rel="stylesheet"
+        />
+<!--         MDB-->
+        <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.css"
+        rel="stylesheet"
+        />
+
+    </head>
+
+    <body>
+    <nav class="navbar navbar-light" style="background-color: #dfebeb;">
+        <!-- Navbar content -->
+        <div id="navcontent">
+        <a href = '/'>
+        <img src='static/snipshop.png' href='home.html' width="100" height="100">
+        </a>
+            <a href='/' style="color: rgba(16, 3, 46, 0.89)">Home</a>
+            <a href='demo' style="color: rgba(16, 3, 46, 0.89); margin-left: 8px;">Demo</a>
+            <a href='pricing' style="color: rgba(16, 3, 46, 0.89); margin-left: 8px;">Pricing</a>
+            <a href='about' style="color: rgba(16, 3, 46, 0.89); margin-left: 8px;">About Us</a>
+            <a href='contact_us' style="color: rgba(16, 3, 46, 0.89); margin-left: 8px;">Contact Us</a>
+            {%if session['loginsuccess']==True %}
+            <a href="my_profile" id="myprofilelink" >
+                <button class = "button button1" style="right: 160px; top:15px;">My Profile</button></a>
+            <a href="logout" id="logout" onclick="logout()">
+                <button class = "button button1"style="right:50px; top:15px;">Logout</button></a>
+
+            {% else %}
+                    <a href="login" id="loginlink">
+                        <button class = "button button1" style= "right:160px; top:15px;">Log In</button>
+                    </a>
+                    <a href="register" id="registerlink">
+                        <button class = "button button1" style="right:50px; top:15px;">Register</button>
+                    </a>
+                    <a href="download" id="downloadlink">
+                        <button class="button button1" style="right:260px; top:15px;" >Download Extension</button>
+                    </a>
+
+            {% endif %}
+        </div>
+    </nav>
+        {% block content %}
+        {% endblock %}
+    {% block footer %}
+    <footer >
+    <div >
+        <div class='container'>
+            <div class='row py-4 d-flex align-items-center'>
+                <div class="col-md-12 text-center">
+                    <a href='#'><i class="fa-brands fa-facebook text-white mr-4"></i></a>
+                    <a href='#'><i class="fa-brands fa-instagram text-white mr-4"></i></a>
+                    <a href='#'><i class="fa-brands fa-twitter text-white mr-4"></i></a>
+                    <a href='#'><i class="fa-brands fa-linkedin text-white"></i></a>
+                    <div class="text-center p-4">
+                        © 2022 Copyright:
+                        <a class="text-reset fw-bold" href="/">Snip-n-Shop</a>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </footer>
+    {% endblock %}
+
+    </body>
+</html>
